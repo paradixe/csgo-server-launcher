@@ -35,14 +35,14 @@
 #                                                                                #
 ##################################################################################
 
-SCREEN_NAME="csgo"
-USER="steam"
-IP="198.51.100.0"
+SCREEN_NAME="ParadiXe Dedicated Practice Server"
+USER="parxed"
+IP="75.127.10.202"
 PORT="27015"
 
-DIR_STEAMCMD="/var/steamcmd"
-STEAM_LOGIN="anonymous"
-STEAM_PASSWORD="anonymous"
+DIR_STEAMCMD="/steamcmd"
+STEAM_LOGIN="parxed"
+STEAM_PASSWORD="Eneki1374"
 STEAM_RUNSCRIPT="$DIR_STEAMCMD/runscript_$SCREEN_NAME"
 
 DIR_ROOT="$DIR_STEAMCMD/games/csgo"
@@ -55,14 +55,14 @@ UPDATE_EMAIL=""
 UPDATE_RETRY=3
 
 # Workshop : https://developer.valvesoftware.com/wiki/CSGO_Workshop_For_Server_Operators
-API_AUTHORIZATION_KEY="" # http://steamcommunity.com/dev/registerkey
-WORKSHOP_COLLECTION_ID="125499818" # http://steamcommunity.com/sharedfiles/filedetails/?id=125499818
-WORKSHOP_START_MAP="125488374" # http://steamcommunity.com/sharedfiles/filedetails/?id=125488374
+#API_AUTHORIZATION_KEY="B0DC9AD33A81157ECF8E62752730D294" # http://steamcommunity.com/dev/registerkey
+#WORKSHOP_COLLECTION_ID="125499818" # http://steamcommunity.com/sharedfiles/filedetails/?id=125499818
+#WORKSHOP_START_MAP="125488374" # http://steamcommunity.com/sharedfiles/filedetails/?id=125488374
 
 # Game config
-MAXPLAYERS="18"
-TICKRATE="64"
-EXTRAPARAMS="-nohltv +sv_pure 0 +game_type 0 +game_mode 0 +mapgroup mg_bomb +map de_dust2"
+MAXPLAYERS="10"
+TICKRATE="128"
+EXTRAPARAMS="-nohltv +sv_pure 0 +game_type 0 +game_mode 0 +mapgroup mg_bomb +map de_dust2 +map de_inferno +map de_season"
 
 PARAM_START="-game csgo -console -usercon -secure -autoupdate -steam_dir ${DIR_STEAMCMD} -steamcmd_script ${STEAM_RUNSCRIPT} -maxplayers_override ${MAXPLAYERS} -tickrate ${TICKRATE} +hostport ${PORT} +ip ${IP} +net_public_adr ${IP} ${EXTRAPARAMS}"
 PARAM_UPDATE="+login ${STEAM_LOGIN} ${STEAM_PASSWORD} +force_install_dir ${DIR_ROOT} +app_update 740 validate +quit"
